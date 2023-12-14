@@ -1,0 +1,107 @@
+body {
+  background-color: #bbb;
+}
+.content {
+  background-color: #bbb;
+}
+/* Example 1 */
+@font-face {
+  font-family: "Capitals";
+  src: local("Arial Black");
+  unicode-range: U+0041-005A;
+  size-adjust: 120%;
+  ascent-override: 0%;
+}
+.video-grid-layout {
+  overflow: hidden;
+  height: 100%;
+}
+.text-container {
+  padding: 1rem;
+  overflow-y: auto;
+}
+.link-container {
+  font-family: Capitals, sans-serif;
+  font-size: 2vw;
+  letter-spacing: -1px;
+}
+.kern {
+  letter-spacing: -7px;
+}
+.audio-container {
+  width: 100%;
+  max-width: 800px;
+  margin:0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  height: 100%;
+}
+video {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  border-radius: 200% 150% 120% 170%;
+  cursor: zoom-in;
+}
+
+.video-container video.full-screen-video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width:auto;
+  height:100%;
+  z-index: 10;
+  margin:0 auto;
+  cursor: zoom-out;
+}
+
+.fade-element {
+  opacity: 0;
+  transition: opacity 0 linear;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.logo-riista-live {
+  position: relative;
+}
+.logo-riista-live img {
+  position: absolute;
+  animation: slowRotate 60s linear infinite;
+  transform-origin: center center;
+  left: -10px;
+  top:-150px;
+  width: 200px;
+}
+
+
+@keyframes slowRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.mobile-layout {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .video-grid-layout, .audio-container {
+    display: none;
+  }
+  .mobile-layout {
+    display: block;
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,178 @@
+@charset "UTF-8";
+
+html,
+body,
+main,
+#app {
+    height: 100%;
+    width: 100%;
+}
+body {
+	font-size: 18px;
+}
+@media (max-width: 700px) {
+	body {
+		font-size: 14px;
+	}
+}
+p {
+	line-height: 1.5;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+}
+.top-bar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 5px;
+  border-bottom: 1px solid black;
+  gap: 5px;
+	flex-wrap: wrap;
+	background-color: white;
+}
+.top-bar div {
+  max-width: 1920px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 700px) {
+  .top-bar .title {
+    display: none;
+  }
+}
+
+button {
+  padding: 7px 16px; /* Padding */
+  text-align: center; /* Centered text */
+  text-decoration: none; /* No underline */
+  display: inline-block; /* Inline block */
+  font-size: 1rem; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 8px; /* Rounded corners */
+}
+
+/***** MODAL DIALOG ****/
+
+#modal {
+	/* Underlay covers entire screen. */
+	position: fixed;
+	top:0px;
+	bottom: 0px;
+	left:0px;
+	right:0px;
+	z-index:1000;
+
+	/* Flexbox centers the .modal-content vertically and horizontally */
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+
+	/* Animate when opening */
+	animation-name: fadeIn;
+	animation-duration:150ms;
+	animation-timing-function: ease;
+}
+
+#modal > .modal-underlay {
+	/* underlay takes up the entire viewport. This is only
+	required if you want to click to dismiss the popup */
+	position: absolute;
+	z-index: -1;
+	top:0px;
+	bottom:0px;
+	left: 0px;
+	right: 0px;
+	opacity: 0.6;
+  background:
+    radial-gradient(ellipse at center,
+      var(--color3) 30%,
+      var(--color6) 60%,
+      var(--color10) 100%
+    )
+  ;
+}
+
+#modal > .modal-content {
+	/* Position visible dialog near the top of the window */
+	margin:10vh 0;
+
+	/* Sizing for visible dialog */
+	width:calc(100% - 1rem);
+	max-width:800px;
+
+	/* Display properties for visible dialog*/
+	border:solid 1px #444;
+	border-radius:8px;
+	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.3);
+	background-color:#fff;
+	padding:10px;
+	overflow: auto;
+
+	/* Animate when opening */
+	animation-name:zoomIn;
+	animation-duration:150ms;
+	animation-timing-function: ease;
+}
+
+#modal.closing {
+	/* Animate when closing */
+	animation-name: fadeOut;
+	animation-duration:150ms;
+	animation-timing-function: ease;
+
+	/* Hide after animation */
+	opacity:0;
+}
+
+#modal.closing > .modal-content {
+	/* Aniate when closing */
+	animation-name: zoomOut;
+	animation-duration:150ms;
+	animation-timing-function: ease;
+}
+
+/** ANIMATIONS ***********/
+@keyframes fadeIn {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+} 
+
+@keyframes fadeOut {
+	0% {opacity: 1;}
+	100% {opacity: 0;}
+} 
+
+@keyframes zoomIn {
+	0% {transform: scale(0.9);}
+	100% {transform: scale(1);}
+} 
+
+@keyframes zoomOut {
+	0% {transform: scale(1);}
+	100% {transform: scale(0.9);}
+} 
+
+
+.art-title, .artist-name, .descriptions {
+  margin-bottom: 10px;
+}
+
+.descriptions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(256px,1fr));
+  gap: 20px;
+}
+
+.description-finnish, .description-english {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}

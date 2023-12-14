@@ -1,0 +1,275 @@
+[
+  {
+    "type": "image",
+    "theme": "roska",
+    "day": "any",
+    "content": [
+      "roska-0.jpg",
+      "roska-1.jpg",
+      "roska-2.jpg",
+      "roska-3.jpg",
+      "roska-4.jpg",
+      "roska-5.jpg",
+      "roska-6.jpg",
+      "roska-7.jpg",
+      "roska-8.jpg",
+      "roska-9.jpg",
+      "roska-10.jpg",
+      "roska-11.jpg",
+      "roska-12.jpg",
+      "roska-13.jpg",
+      "roska-14.jpg",
+      "roska-15.jpg",
+      "roska-16.jpg",
+      "roska-17.jpg",
+      "roska-18.jpg"
+    ]
+  },
+  {
+    "type": "image",
+    "theme": "piirrustus",
+    "day": "any",
+    "content": [
+      "piirrustus-0.jpg",
+      "piirrustus-1.jpg",
+      "piirrustus-2.jpg",
+      "piirrustus-3.jpg",
+      "piirrustus-4.jpg",
+      "piirrustus-5.jpg",
+      "piirrustus-6.jpg",
+      "piirrustus-7.jpg",
+      "piirrustus-8.jpg",
+      "piirrustus-9.jpg",
+      "piirrustus-10.jpg",
+      "piirrustus-11.jpg",
+      "piirrustus-12.jpg",
+      "piirrustus-13.jpg",
+      "piirrustus-14.jpg",
+      "piirrustus-15.jpg",
+      "piirrustus-16.jpg",
+      "piirrustus-17.jpg",
+      "piirrustus-18.jpg",
+      "piirrustus-19.jpg",
+      "piirrustus-20.jpg",
+      "piirrustus-21.jpg",
+      "piirrustus-22.jpg",
+      "piirrustus-23.jpg",
+      "piirrustus-24.jpg"
+    ]
+  },
+  {
+    "type": "image",
+    "theme": "filmikuva",
+    "day": "any",
+    "content": [
+      "filmikuva-0.jpg",
+      "filmikuva-1.jpg",
+      "filmikuva-2.jpg",
+      "filmikuva-3.jpg",
+      "filmikuva-4.jpg",
+      "filmikuva-5.jpg",
+      "filmikuva-6.jpg",
+      "filmikuva-7.jpg",
+      "filmikuva-8.jpg",
+      "filmikuva-9.jpg",
+      "filmikuva-10.jpg",
+      "filmikuva-11.jpg",
+      "filmikuva-12.jpg",
+      "filmikuva-13.jpg",
+      "filmikuva-14.jpg",
+      "filmikuva-15.jpg",
+      "filmikuva-16.jpg",
+      "filmikuva-17.jpg",
+      "filmikuva-18.jpg"
+    ]
+  },
+  {
+    "type": "text",
+    "theme": "runo",
+    "day": "any",
+    "content": [
+      "On peitettävä se ettei osaa leikata,<br> on peitettävä tapeltu parketti.",
+      "On peitettävä se ettei tiedä miten uida,<br> oranssissa vedessä ilman valvontaa.",
+      "On peitettävä jäljet kulmien karvoissa,<br> on siistittävä reitti kellariin.",
+      "On piilotettava se ettei ole tutkija,<br> me ryömimme narikan kautta opistoon.",
+      "On laitettava raaka pala taskuun,<br> suljettava vetskari johon jää väliin.",
+      "On peitettävä se että joskus sekosin,<br> liisteröin mahani täyteen lehtiä.",
+      "On vaihdettava asuun jotakin normaalia,<br> ettemme paljasta nukkumista likaan.",
+      "On peitettävä se että syömme oksia,<br> vaikutamme jälkikäteen todella kuivilta.",
+      "Roihahdamme hetkenä minä hyvänsä <br> alaston paljastuu ja... leimahdus!",
+      "On peitettävä päähän jääneet jäljet,<br> kasvimaan tikkiset luupolvet,<br> kevytluinen äly jota ei voi hyödyntää,<br> paksut veren jäljet katedraalissa,<br> kirstu jossa toinen minä makaa.",
+      "Hullu kaksoisolento komerossa <br> mitalli paskuudessa <br> röpelöiset huulenpielet, <br> vihreää kaalia kasvaa haaroista <br> sikolätti ja tunteeton halli, <br> markkinoita buustannut kiitokauppa,",
+      "On tungettava kaikki sopivaan pakettiin - <br> sellaiseen, <br>jossa mahtuu postiluukusta pakoon.",
+      "Timanttikynnet liitutaulun kirskeessä <br> hikeä tihkuvassa rommipullossa <br> On piilotettava se että tulimme äärien takaa <br>laskuvarjon mukana postissa homeessa",
+      "Täynnä hätäkutsuja tulevasta ruvesta <br> kuolleen naarmut eivät enää parane, <br>ne jäävät ikuisesti vuotamaan maahan <br> kasvamaan veriapilaa hallituksen aamuissa.",
+      "On peitettävä asia jonka tein aamulla, <br> veistoksen joka näyttää ihan minulta.",
+      "Yhtä kaunis, niin ihanan ruma.",
+      "On peitettävä lista jota joudumme käyttämään <br> muistaaksemme miten maailmassa hiivitään.",
+      "On peitettävä asiat jotka tekevät meistä meidät, <br> olemus, kaikki ihana, rooliton hirnu.",
+      "On piilotettava ruusu ja aitouden kaali <br>josta keittää pitkään hyvää soppaa.",
+      "On hävettävä kaikkea, <br>kunnes joskus herne kerrallaan <br> näyttää totuus jollekin toiselle <br> ja yhdessä toivoa esityksen loppua.",
+      "Radiossa kerrotaan ja puhutaan, <br>puhe on poliittista, haavaista ja sekavaa takeltelua.",
+      "Suussa maistuu tuhkakukka. Poltettuja tulitikkuja rouskuttaa.",
+      "Saisinpa uudet liidut saisinpa elää pitkään.",
+      "Joka aamu odotan, millainen nousu tänään näkyy.",
+      "Se on aina ennustamaton ja erilainen oranssi kivi.",
+      "Olin elokuvatähti 50-luvulla. Tapoin kaikki ja näin pisteen pimeässä.",
+      "Nyt olen sen luona nykyisessä.. (kesken)",
+      "<i>kyyneleet vartalollani kuin risut, <br> ruusu kädessä älkää tehkö elämää mahdottomaksi. <br> Minkä puolesta enää mennä, <br>jos tapoitte oranssin hohdon. Joku soittaa... (kesken)<\/i>",
+      "..soitto loppui. <br> raakkumista. Juoksen uponneita pitkospuita, <br>on taas vanha vuodenaika. Kirjoitan sanoja pahviin.",
+      "Palelen Chateau Marmontin edessä, se on nykyään pommitettu paskaläävä.",
+      "Me tulemme nyt sänkyysi nukkumaan. En hellitä otetta, puristan niin että koura jumittaa.",
+      "Palapelissä on reikiä muttei ole aikaa etsiä paloja... tiedän kuka tietää missä mutta... ei ole aikaa soittaa kesälle.",
+      "Kun tärisen, tärisee myös ilma ympärilläni ja luut <br> kun tärisen sinäkin täriset kourassani. Kukaan ei voi ennustaa <br> miten tässä käy minä ennustan silti: muistan lopulta vain <br> sinun kauniin juttusi jonka luit sängyssä tänään <br>kun lämmiteltiin lokassa haavoittuneita maksojamme."
+    ]
+  },
+  {
+    "type": "text",
+    "theme": "keskustelu",
+    "day": "any",
+    "content": [
+      "Eräs esitys ei herättänyt minussa kuin kunnioituksen sekaista kylmyyttä. Tuli kylmä ja kolkko ja uhattu olo. Ystäväni ajatukset sen sijaan lensivät ja pursuilivat saman esityksen äärellä. Puhuimme ja opiskelimme toistemme silmiä",
+      "Vierailimme taidejärjestössä. Hiljalleen kaikki (karsea) valkenee. <em>Uskomme järjestäytymiseen<\/em> kannustimme puskemaan ujouden läpi.",
+      "Keskustelu ystäväkeskeisestä romanttisesta elämästä. Yritimme ymmärtää maailman jännitteitä ja söimme puuroa.",
+      "Itkuisia ääniviestejä syysmyrskyssä, lehdet lensivät kilpaa tuskan kanssa: riekaleet kiisivät etumatkaa. Vain jos haluaa mennä silppurin läpi, silppurilla ei ole valtaa sinuun.",
+      "R:n taideluento; näkymättömien ystävien sniikkaaminen mukanaan, paineet tehdä vitun hieno teos, “uskokaa hauraaseen ääneenne se on ihana ja mullistava”",
+      "K:n kanssa botoxista ja journalismista, kaikki muuttuu samanlaiseksi ja uskomme, on syytä sukeltaa syvemmälle piikkiin",
+      "Jokaisen esityksen aikana mielen draaman kaari: skeptisyys (voittakaa minut puolellenne), vaikuttuminen, ihastuminen, rakastuminen (jalustalle nostaminen), lamaantuminen (vertaaminen), väsyminen, innostus aplodeihin, comedown, sulattelu, nostalgia"
+    ]
+  },
+  {
+    "type": "text",
+    "theme": "lista",
+    "day": "any",
+    "content": [
+      "<b>Kuuntele:<\/b>chateau marmont playlist<br> feelings radio<br> <br> <b>Lue:<\/b><br> Black unicorn (Lorde)<br> puutarhurin perjantaiposti<br> zine Tilkittyä puhkottua puhuvaa<br> Fem-R<br> <br> <b>Katso:<\/b><br> Pearl<br> tubettaja budapestissa<br> Dalida<br> Avaruuden pirut (Menzies)<br> Superstar - The Karen Carpenter Story (1988) (Haynes)<br> Mean Time Between Failures: FRACPTURING",
+      "<b>Kuuntele<\/b><br> miten muotisuunnittelijat puhuvat<br> Tyler the creator haastis<br> lucifer over LA<br> <br> <b>Lue: <\/b><br> Extra transmission (Abi-Karam)<br> Voiman taiteen paikka<br> Ursan sivut<br> Vakooja rakkauden talossa kesken<br> <br> <b>Katso<\/b><br> Are we over celebs talking?...politics? (Mbowe)<br> Influencer apocalypse<br> who is brigitte fontaine<br> Sedmikrásky (Chytilová)<br> Petrolio, Itkujuhla<br>"
+    ]
+  },
+  {
+    "type": "text",
+    "theme": "lause",
+    "day": "maanantai",
+    "content": [
+      "Filmin rakeissa liikut ja kuhiset.",
+      "Kuka tarjoaa yöpaikan tänään?",
+      "Hiekkatie rahisi kuin caipiroskan reuna.",
+      "Sumuinen leikkipuisto on täynnä elokuvia.",
+      "Punaiset huulesi jokaisella alttarillani.",
+      "Alastomia hetkiä polttavassa lumessa.",
+      "Kesä nuortui syksyn rystysiin.",
+      "Joku kehittää suurelokuvaa yläkerrassa.",
+      "Katseen alla ongelmiksi muuttuneita eläimiä.",
+      "Renkaassa pyörivä hapeton kaula.",
+      "Kyynel ja kylmät väreet."
+    ]
+  },
+  {
+    "type": "text",
+    "theme": "lause",
+    "day": "tiistai",
+    "content": [
+      "Janna oli kova valehtelemaan. ",
+      "Uskoin kaiken kuin ääliö.",
+      "Katkeroituneet mentorit laittavat pahan kiertämään. ",
+      "Sokeri muuttui suolaksi ja suola haavoiksi.",
+      "Kirjeenvaihtaja marsista: “Pysykää kaukana täältä”",
+      "Konun naukkailu sai pahan eskaloitumaan.",
+      "En tajua lukujärjestyksestä mitään.",
+      "Olen päissäni raporteista Sugababes",
+      "Muoviastiat saunovat tiskikaapissa.",
+      "Merihevoset kisuttavat suolakiveä rannassa.",
+      "Teen teatraalisia muistiinpanoja kaikesta pienestä."
+    ]
+  },
+  {
+    "type": "text",
+    "theme": "lause",
+    "day": "keskiviikko",
+    "content": [
+      "Maistamme parvekkeella kurkkua ja valkoista juustoa.",
+      "Maistuisiko nenälävistyspizza? Voudrais tu un Pizza aux Narines?",
+      "Savu maustaa lokaa",
+      "Pehmeät hauikset moussea.",
+      "Ruukut täynnä tuoksuvia lehtiä.",
+      "Rakastan itseni pihalle.",
+      "Tule luokseni sotkemaan, kiltti.",
+      "Kuinka selviämme tapon hajusta?",
+      "“This is a terrible October”",
+      "Rakastajat lymyävät sängyssä kuin luteet.",
+      "“Minusta leikattiin pala ja se meni roskiin. Paha on poissa!”"
+    ]
+  },
+  {
+    "type": "text",
+    "theme": "lause",
+    "day": "torstai",
+    "content": [
+      "Joka sana muistuttaa että ",
+      "Selvin päin eläminen; selvin silmin, suin, sydämin. Kaikki on kirkasta, kamalaa, ja niin rääkyvää että itkettää",
+      "Syreenien ilmestyminen, muistiinpanoihin",
+      "“The egg tomorrow will be a broiler”",
+      "Kuun sarvet leikataan lääkärissä, tuletko pitämään tärisevää kättäni...",
+      "Helmikuun jälkeen kaikki on vain säpälettä",
+      "Matkustin kuusi vuotta ovelle joka on lukossa",
+      "Lupasin pysyä freesinä, peitin mädäntymisen hedelmillä",
+      "Sivalsit verbaalisella veitsellä alavatsaani, kaikki kalanmunat valuivat mattoon",
+      "Purin sähköjohtosi poikki, olit viimein hiljaa",
+      "Antakaa hirviölle mikki"
+    ]
+  },
+  {
+    "type": "text",
+    "theme": "lause",
+    "day": "perjantai",
+    "content": [
+      "“Onko kukaan muu kuollut puolestasi?”",
+      "Minne ikinä katsonkin, jokin kituu ja vaikeroi nimeäni",
+      "Istun kidutuksen kanssa samaan pöytään. Tilaamme oliiveja, espresson, kroissantin ja vichyä. Anna tulla. Hänellä on painava muodoton olemus, kuin yhteiskunnalla. Sitä ei voi syleillä. Hän syö oliivini ja katsoo vain siivua minusta",
+      "Katkenneita kaaleja, naatteja, perkuujätettä, nahkaa, kurkkujen piikikkäitä kuoria, huonoja osia, hometta. Kaiken seassa kauniita helmiä, lapsia",
+      "“Tiiäks mikä mul o, alkaa koolla ja loppuu oohon”",
+      "Punainen huopa kuorruttaa minut kuin munkin.",
+      "Laittaudun majakkakierrokselle terveeksi.",
+      "Keksikää jo jotain uutta, keksikää kuinka piristää minua.",
+      "Keksikää surulääke, keksikää miten saada toinen nauramaan. ",
+      "Säännöt on tehty kidutukseksi.",
+      "Kun kaikki kuolevat, tuska viimein häviää."
+    ]
+  },
+  {
+    "type": "text",
+    "theme": "lause",
+    "day": "lauantai",
+    "content": [
+      "Tavalliseksi päiväksi muuttunut katedraali.",
+      "Kottikärry täynnä karvaisia pommeja.",
+      "Itku ei lopu tuhansiin vuosiin ei vaikeisiin sanoihin esseissä",
+      "unessa Bimbo sanoi: kolmas kirja, palkinto ja pelastettu kala",
+      "Ja “toivon sinulle kiltimpää merta”",
+      "Radio läähättää",
+      "Videolla hahmo luikkii sateisessa metsässä kahvin kanssa",
+      "“Luon mitä tunnen”",
+      "Uusissa kattomaalauksissa on ennennäkemättömiä värejä, joiden alla näymme",
+      "Housusi täynnä paksua maalia. Jäämme ikuisina teatterin penkkiin",
+      "Heräät ja olet lämmin, luumunlehtiä tyynylläni"
+    ]
+  },
+  {
+    "type": "text",
+    "theme": "lause",
+    "day": "sunnuntai",
+    "content": [
+      "Kestätkö vielä jos olen yhden yön luonasi? En osaa auttaa missään.",
+      "Pukeudun Janikseksi ja loikin baariin huivit heiluen.",
+      "Kiitin sinua kaikesta, et kuullut kun ääneni pihisi tuulessa vaan.",
+      "Liian pitkä odotus saa puutarhan naukumaan.",
+      "Kuusien alla röökaaminen on kiellettyä hedelmää.",
+      "Rakastun ja eroan aina syksyllä.",
+      "Tietokone on täynnä lihaa syöviä viiruksia.",
+      "Asun majakassa jota etsin merellä.",
+      "Käpristyimme krapulasimpukkaan.",
+      "Viimeisen jälkeen tulee uusi filmi.",
+      "Joka päivä maalattu vihko ei ole enää hengissä."
+    ]
+  }
+]
