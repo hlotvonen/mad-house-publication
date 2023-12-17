@@ -18,6 +18,16 @@ body {
 p {
 	line-height: 1.5;
 }
+a {
+  color:black;
+}
+a:visited {
+	color:black;  
+}
+h1 {
+  font-family: sans-serif;
+}
+
 
 .content {
   display: flex;
@@ -50,13 +60,25 @@ p {
 }
 
 button {
-  padding: 7px 16px; /* Padding */
-  text-align: center; /* Centered text */
-  text-decoration: none; /* No underline */
-  display: inline-block; /* Inline block */
-  font-size: 1rem; /* Font size */
-  cursor: pointer; /* Pointer cursor on hover */
-  border-radius: 8px; /* Rounded corners */
+  background: var(--color4);
+  color: black;
+	font-family: sans-serif;
+  border: 2px outset var(--color10); 
+  padding: 10px 20px;       /* Padding around the text */
+  text-align: center;       /* Center the text */
+  text-decoration: none;    /* No underline */
+  display: inline-block;    /* Allows setting width and height */
+  font-size: 16px;          /* Standard text size */
+  margin: 4px 2px;          /* Margin for spacing between buttons */
+  cursor: pointer;          /* Cursor to pointer to indicate it's clickable */
+  border-radius: 5px;       /* Rounded corners */
+  transition: background-color 0.1s; /* Smooth transition for hover effect */
+
+}
+
+/* Hover and active states for the button */
+button:hover, button:active {
+  background-color: var(--color10);; /* Darker shade of blue for hover/active */
 }
 
 /***** MODAL DIALOG ****/
@@ -113,7 +135,7 @@ button {
 	border-radius:8px;
 	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.3);
 	background-color:#fff;
-	padding:10px;
+	padding:1rem;
 	overflow: auto;
 
 	/* Animate when opening */
@@ -160,7 +182,9 @@ button {
 	100% {transform: scale(0.9);}
 } 
 
-
+.art-title {
+	font-family: sans-serif;
+}
 .art-title, .artist-name, .descriptions {
   margin-bottom: 10px;
 }

@@ -2,11 +2,14 @@
   import "dayjs/locale/fi.js";
   import dayjs from "dayjs";
   import Time from "svelte-time";
-  import { userChoices, cooldown } from "../store.js";
+  import { userChoices, storePageCounts, storeTotalProgress } from "../store.js";
   import Choice from "./Choice.svelte";
   import { onMount } from "svelte";
   import materiaali from "../assets/materiaali.json";
   import extrat from "../assets/extrat.json";
+  import ZinePreview from "./ZinePreview.svelte";
+  import Background from "./Background.svelte";
+  import PagesCounter from "./PagesCounter.svelte";
 
 
   dayjs.locale("fi");
@@ -18,15 +21,56 @@
   }
   $: getRandomMoment();
 
-  const maxStages = 7;
-
   let stage = 0;
   let currentChoices = [];
   let isCooldownActive = false;
+  let themePrompt = "";
+
+  function checkDaysWithLessThanSevenItems(pageCounts) {
+    const daysWithLessThanSeven = [];
+    for (const day in pageCounts) {
+      if (pageCounts[day] < 7) {
+        daysWithLessThanSeven.push(`<b>${day}`);
+      }
+    }
+    if (daysWithLessThanSeven.length > 1) {
+      // Join all elements except the last one, then add " and " before the last element
+      return "Jotta voit täyttää loputkin sivut Trash Lover -zinestä, tule tälle sivulle uudestaan jonain " + daysWithLessThanSeven.slice(0, -1).join("na</b>, ") + "na</b> tai " + daysWithLessThanSeven.slice(-1) + "na</b>. (Edistymisesi on tallennettu selaimen muistiin.)";
+    } else if (daysWithLessThanSeven.length === 1) {
+      // If there is only one day, return it as is
+      return "Jotta voit täyttää viimeisen sivun Trash Lover -zinestä, tule tälle sivulle uudestaan " + daysWithLessThanSeven[0] + "</b>na. (Edistymisesi on tallennettu selaimen muistiin.)";
+    } else {
+      // If the array is empty, handle accordingly (e.g., return an empty string or a specific message)
+      return "Trash Lover -zine on valmis!";
+    }
+  }
+  $: daysWithLessThanSeven = checkDaysWithLessThanSevenItems($storePageCounts);
+
+  function checkFilledPages(pageCounts) {
+    const filledPages = [];
+    for (const day in pageCounts) {
+      if (pageCounts[day] === 7) {
+        filledPages.push(`<a href="#${day}">${day}`);
+      }
+    }
+    if (filledPages.length > 1) {
+      // Join all elements except the last one, then add " and " before the last element
+      return "Olet täyttänyt zinestä " + filledPages.slice(0, -1).join("n</a>, ") + "</a> ja " + filledPages.slice(-1) + "n</a>.";
+    } else if (filledPages.length === 1) {
+      // If there is only one day, return it as is
+      return "Olet täyttänyt zinestä " + filledPages[0] + "n</a>.";
+    } else {
+      // If the array is empty, handle accordingly (e.g., return an empty string or a specific message)
+      return "Et ole täyttänyt vielä yhtään päivää... miten pääsit tänne?";
+    }
+  }
+  $: filledPages = checkFilledPages($storePageCounts);
+
 
   onMount(() => {
     checkCooldown();
     loadChoices();
+    getThemePrompt();
   });
 
   // Function to get current day in Finnish
@@ -57,7 +101,8 @@
     });
     possibleThemes = Array.from(possibleThemes);
 
-    while (setsGenerated < totalSetsNeeded && stage < maxStages) {
+
+    while (setsGenerated <= totalSetsNeeded) {
       let possibleChoices = [];
       const today = getCurrentDay();
       const selectedTheme = possibleThemes[Math.floor(Math.random() * possibleThemes.length)];
@@ -66,7 +111,7 @@
       materiaali.forEach((item) => {
         if ((item.day === "any" || item.day === today) && item.theme === selectedTheme) {
           item.content.forEach((contentItem) => {
-            if (!$userChoices.includes(contentItem) && !usedContent.has(contentItem)) {
+            if (!$userChoices[today].includes(contentItem) && !usedContent.has(contentItem)) {
               possibleChoices.push({ ...item, content: contentItem });
             }
           });
@@ -90,47 +135,120 @@
       console.log(
         "Unable to generate enough choice sets. Implementing cooldown.",
       );
-      isCooldownActive = true;
+    }
+  }
+  function getThemePrompt() {
+    if(currentChoices[stage]) {
+      switch (currentChoices[stage][0].theme) {
+        case "roska":
+          console.log('roska')
+          themePrompt = "Huomaat roskan lattialla. Noukit sen ylös.";
+          break;
+        case "piirrustus":
+          themePrompt = "Siitä inspiroituneena piirrät kuvan.";
+          break;
+        case "filmikuva":
+          themePrompt = "Tallennat hetken kamerallasi.";
+          break;
+        case "runo":
+          themePrompt = "Mielesi kutoo sanoista kangasta.";
+          break;
+        case "esitys":
+          themePrompt = "Saat idean esityksestä.";
+          break;
+        case "keskustelu":
+          themePrompt = "Teet muistiinpanon käymästäsi keskustelusta.";
+          break;
+        case "lista":
+          themePrompt = "Teet listan, jottet unohtaisi.";
+          break;
+        case "lause":
+          themePrompt = "Rustaat ylös kuulemasi lauseen joka jäi mieleen.";
+          break;
+      }
     }
   }
 
   function selectChoice(choice) {
-    userChoices.update((n) => [...n, choice.detail]);
-    console.log($userChoices)
+    checkCooldown();
+    userChoices.update(choices => {
+      // Add the choice to the appropriate day
+      choices[getCurrentDay()][stage] = choice.detail;
+      return choices;
+    });
     stage++;
+    getThemePrompt();
   }
 
   function checkCooldown() {
-    // Implement cooldown logic based on last choice timestamp
-  }
-  function clearChoices() {
-    userChoices.set([]);
+    if($userChoices[getCurrentDay()][5].content === undefined) {
+      isCooldownActive = false;
+      console.log('Cooldown is inactive');
+    } else {
+      isCooldownActive = true;
+      console.log('Cooldown is active');
+    }
   }
 </script>
 
-<button on:click={clearChoices}>Empty</button>
-
-{#if isCooldownActive}
-  <p>Voit tehdä lisää valintoja huomenna</p>
-  {#each $userChoices as choice}
-    <Choice {choice} />
-  {/each}
-{:else}
-  <p>
-    On <Time timestamp={new Date()} format="dddd [ja kello näyttää] H:mm" />. {randomMoment}
-  </p>
-  <div class="choices">
-    {#if currentChoices[stage]}
-      {#each currentChoices[stage] as choice }
-        <Choice {choice} on:select={selectChoice} />
-      {/each}
-    {/if}
+<Background>
+  <div class="game-content">
+    {#if isCooldownActive}
+      <div class="prompt dontprint">
+        <p>{@html filledPages}</p>
+        <p>{@html daysWithLessThanSeven}</p>
+        <p>Kokonaisuudessaan zinestä on täytetty {Math.floor($storeTotalProgress / 49 * 100)}% <button on:click={() => window.print() }>Tulosta</button></p>
+      </div>
+      <ZinePreview />
+    {:else}
+      <div class="prompt dontprint">
+        <p>
+          On <Time timestamp={new Date()} format="dddd [ja kello näyttää] H:mm" />. {randomMoment}
+        </p>
+        <p>
+          {themePrompt}
+        </p>
+      </div>
+      <div class="choices">
+        {#if currentChoices[stage]}
+          {#each currentChoices[stage] as choice, i }
+            <Choice {choice} index={i} on:select={selectChoice} />
+          {/each}
+        {/if}
+      </div>
+    {/if} 
   </div>
-{/if}
+  <div class="counter">
+    <PagesCounter />
+  </div>
+</Background>
 
 <style>
+  .counter {
+    position: absolute;
+    bottom:0;
+    width:100%;
+  }
+  .game-content {
+    height: 100%;
+    width:100%;
+    overflow: auto;
+  }
+  .prompt {
+    font-size: 1.5rem;
+    background-color: white;
+    border:1px solid black;
+    padding:0 1rem;
+    margin: 5vh auto;
+    width:max-content;
+    max-width:800px;
+  }
   .choices {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    gap:1rem;
+    max-width: 1024px;
+    margin: 0 auto;
   }
+
 </style>

@@ -13,7 +13,7 @@
   let showTheHedge = false;
 </script>
 
-<div class="content">
+<div class="content bg-color">
 
   <div class="top-bar">
     <div>
@@ -22,7 +22,7 @@
       <button on:click={() => (showBioInfo = true)}> Bio & Info</button>
     </div>
   </div>
-  <div class="top-bar">
+  <div class="top-bar bg-color">
     <button on:click={() => (showTariKuvailee = true)}>Tari Doris kuvailee sanoin konserttia.</button>
     <button on:click={() => (showTariDescribes = true)}>The concert is described in words by Tari Doris.</button>
     <button on:click={() => (showSharpEdges = true)}>Sharp Edges</button>
@@ -33,7 +33,7 @@
     <button on:click={() => (showTheHedge = true)}>The Hedge</button>
 
   </div>
-  <div class="freja-container">
+  <div class="freja-container bg-color">
     <Soundboard />
   </div>
 </div>
@@ -361,6 +361,9 @@
 {/if}
 
 <style>
+  .bg-color {
+    background: var(--color9);
+  }
   .freja-container {
     overflow: auto;
   }

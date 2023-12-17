@@ -18,7 +18,7 @@
   display: grid;
   position: relative;
 }
-.grid-container a {
+.grid-container > a {
   height:100%;
   width:100%;
   margin:0;
@@ -164,4 +164,15 @@
     linear-gradient(var(--color3) 30%,
       var(--color6) 60%,
       var(--color10) 100%);
+}
+
+.pattern-xPV3X {
+  background:#e5e5e5;
+  border-radius:10px;
+  border:1px solid var(--color2);
+  outline:5px solid #e5e5e5;
+}
+.pattern-kw7AV {
+  border-bottom:1px solid var(--color2);
+  border-top:1px solid var(--color2);
 }

@@ -125,6 +125,37 @@
   },
   {
     "type": "text",
+    "theme": "esitys",
+    "day": "any",
+    "content": [
+      "esitysidea: esiintyjäeläimen kanssa samassa häkissä",
+      "esitysidea: esitys jossa maanantai-aamuisin harhaillaan kaupungilla",
+      "esitysidea: esitys jossa kirjoitetaan kynä loppuun",
+      "esitysidea: esitys jossa päästään lääkäriin ajoissa",
+      "esitysidea: esitys jossa ymmärretään kaikki rakenteet selkeästi",
+      "esitysidea: esitys jossa pienet korret tärisevät",
+      "esitysidea: esitys jossa aika loppuu kesken",
+      "esitysidea: tyhjennetään jalkapallostadion esitys",
+      "esitysidea: juodaan hautakukkien limavettä esitys",
+      "esitysidea: langataan kynnet ja hampaat viilataan esitys",
+      "esitysidea: maistetaan kaikki eri tavalla esitys",
+      "esitysidea: kestollinen kuka murehtii intohimoisemmin esitys",
+      "esitysidea: yritetään päästä salaisiin kabinetteihin esitys",
+      "esitysidea: esitetään toisiamme ja toistemme taidepersoonaa esitys",
+      "esitysidea: autetaan tien yli esitys",
+      "esitysidea: hukutaan kivikkoon esitys",
+      "esitysidea: kestollinen ryyppyputkella esitys",
+      "esitysidea: rukoillaan parempia aikoja esitys",
+      "esitysidea: valetaan toivoa kaikkiin esitys",
+      "esitysidea: mennään kaikki liittoon esitys",
+      "esitysidea: luvataan ettei ikinä lähdetä esitys",
+      "esitysidea: sanotaan että kaikella on syynsä esitys",
+      "esitysidea: esitys jälki-istunnossa (meistä tuli tähtiä)",
+      "esitysidea: “tästä esityksestä saisi oscarin jos vain tiedettäisiin esitykseksi” esitys"
+    ]
+  },
+  {
+    "type": "text",
     "theme": "keskustelu",
     "day": "any",
     "content": [
@@ -142,8 +173,12 @@
     "theme": "lista",
     "day": "any",
     "content": [
-      "<b>Kuuntele:<\/b>chateau marmont playlist<br> feelings radio<br> <br> <b>Lue:<\/b><br> Black unicorn (Lorde)<br> puutarhurin perjantaiposti<br> zine Tilkittyä puhkottua puhuvaa<br> Fem-R<br> <br> <b>Katso:<\/b><br> Pearl<br> tubettaja budapestissa<br> Dalida<br> Avaruuden pirut (Menzies)<br> Superstar - The Karen Carpenter Story (1988) (Haynes)<br> Mean Time Between Failures: FRACPTURING",
-      "<b>Kuuntele<\/b><br> miten muotisuunnittelijat puhuvat<br> Tyler the creator haastis<br> lucifer over LA<br> <br> <b>Lue: <\/b><br> Extra transmission (Abi-Karam)<br> Voiman taiteen paikka<br> Ursan sivut<br> Vakooja rakkauden talossa kesken<br> <br> <b>Katso<\/b><br> Are we over celebs talking?...politics? (Mbowe)<br> Influencer apocalypse<br> who is brigitte fontaine<br> Sedmikrásky (Chytilová)<br> Petrolio, Itkujuhla<br>"
+      "<b>Kuuntele:<\/b><br> — chateau marmont playlist<br> — feelings radio",
+      "<b>Lue:<\/b><br> — Black unicorn (Lorde)<br> — puutarhurin perjantaiposti<br> — zine Tilkittyä puhkottua puhuvaa<br> Fem-R",
+      "<b>Katso:<\/b><br> — Pearl<br> tubettaja budapestissa<br> —  Dalida<br> — Avaruuden pirut (Menzies)<br> — Superstar - The Karen Carpenter Story (1988) (Haynes)<br> —  Mean Time Between Failures: FRACPTURING",
+      "<b>Kuuntele<\/b><br> — miten muotisuunnittelijat puhuvat<br> — Tyler the creator haastis<br> — lucifer over LA",
+      "<b>Lue: <\/b><br> — Extra transmission (Abi-Karam)<br> — Voiman taiteen paikka<br> — Ursan sivut<br> — Vakooja rakkauden talossa kesken",
+      "<b>Katso<\/b><br> — Are we over celebs talking?...politics? (Mbowe)<br> — Influencer apocalypse<br> — who is brigitte fontaine<br> Sedmikrásky (Chytilová)<br> — Petrolio, Itkujuhla"
     ]
   },
   {

@@ -1,7 +1,6 @@
 <script>
   import Game from "./lib/Game.svelte";
   import Modal from "./lib/Modal.svelte";
-  import Pdf from "./lib/Pdf.svelte";
 
   let showBioInfo = false;
 
@@ -9,22 +8,21 @@
 
 <div class="content">
 
-  <div class="top-bar">
+  <div class="top-bar dontprint">
     <div>
       <a href="..">&larr; Takaisin / Back</a>
-      <span class="title">Elsa Tölli <i>Trashlover</i></span>
+      <span class="title">Elsa Tölli <i>Trash Lover</i></span>
       <button on:click={() => (showBioInfo = true)}> Bio & Info</button>
     </div>
   </div>
   <div class="elsa-container">
     <Game />
-    <Pdf />
   </div>
 </div>
 
 {#if showBioInfo}
   <Modal on:close={() => (showBioInfo = false)}>
-    <h2 slot="title">Trashlover</h2>
+    <h2 slot="title">Trash Lover</h2>
     <h2 slot="name">Elsa Tölli</h2>
     <div class="descriptions">
       <div lang="fi" class="description-finnish">
