@@ -9,7 +9,7 @@
 
 <style>
   .background-img {
-    background: url('piirrustus-10.jpg');
+    background: url('../piirrustus-10.jpg');
     background-size: cover;
   }
   .grid-container {
