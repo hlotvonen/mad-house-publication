@@ -63,6 +63,8 @@
     if (event.button !== 0) return;
     event.stopPropagation();
     
+    initializeAudio();
+
     let coords = convertPixelToSvgCoord(event, el);
     dragging = {
       dx: $circles[index].position.x - coords.x,

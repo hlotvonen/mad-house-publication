@@ -2,7 +2,11 @@
   import "dayjs/locale/fi.js";
   import dayjs from "dayjs";
   import Time from "svelte-time";
-  import { userChoices, storePageCounts, storeTotalProgress } from "../store.js";
+  import {
+    userChoices,
+    storePageCounts,
+    storeTotalProgress,
+  } from "../store.js";
   import Choice from "./Choice.svelte";
   import { onMount } from "svelte";
   import materiaali from "../assets/materiaali.json";
@@ -10,7 +14,6 @@
   import ZinePreview from "./ZinePreview.svelte";
   import Background from "./Background.svelte";
   import PagesCounter from "./PagesCounter.svelte";
-
 
   dayjs.locale("fi");
 
@@ -35,10 +38,20 @@
     }
     if (daysWithLessThanSeven.length > 1) {
       // Join all elements except the last one, then add " and " before the last element
-      return "Jotta voit täyttää loputkin sivut Trash Lover -zinestä, tule tälle sivulle uudestaan jonain " + daysWithLessThanSeven.slice(0, -1).join("na</b>, ") + "na</b> tai " + daysWithLessThanSeven.slice(-1) + "na</b>. (Edistymisesi on tallennettu selaimen muistiin.)";
+      return (
+        "Jotta voit täyttää loputkin sivut Trash Lover -zinestä, tule tälle sivulle uudestaan jonain " +
+        daysWithLessThanSeven.slice(0, -1).join("na</b>, ") +
+        "na</b> tai " +
+        daysWithLessThanSeven.slice(-1) +
+        "na</b>. (Edistymisesi on tallennettu selaimen muistiin.)"
+      );
     } else if (daysWithLessThanSeven.length === 1) {
       // If there is only one day, return it as is
-      return "Jotta voit täyttää viimeisen sivun Trash Lover -zinestä, tule tälle sivulle uudestaan " + daysWithLessThanSeven[0] + "</b>na. (Edistymisesi on tallennettu selaimen muistiin.)";
+      return (
+        "Jotta voit täyttää viimeisen sivun Trash Lover -zinestä, tule tälle sivulle uudestaan " +
+        daysWithLessThanSeven[0] +
+        "</b>na. (Edistymisesi on tallennettu selaimen muistiin.)"
+      );
     } else {
       // If the array is empty, handle accordingly (e.g., return an empty string or a specific message)
       return "Trash Lover -zine on valmis!";
@@ -55,7 +68,13 @@
     }
     if (filledPages.length > 1) {
       // Join all elements except the last one, then add " and " before the last element
-      return "Olet täyttänyt zinestä " + filledPages.slice(0, -1).join("n</a>, ") + "</a> ja " + filledPages.slice(-1) + "n</a>.";
+      return (
+        "Olet täyttänyt zinestä " +
+        filledPages.slice(0, -1).join("n</a>, ") +
+        "n</a> ja " +
+        filledPages.slice(-1) +
+        "n</a>."
+      );
     } else if (filledPages.length === 1) {
       // If there is only one day, return it as is
       return "Olet täyttänyt zinestä " + filledPages[0] + "n</a>.";
@@ -65,7 +84,6 @@
     }
   }
   $: filledPages = checkFilledPages($storePageCounts);
-
 
   onMount(() => {
     checkCooldown();
@@ -94,6 +112,7 @@
     let choicesPerSet = 3;
     let possibleThemes = new Set();
     let usedContent = new Set(); // Set to keep track of used content
+    const frozenUserChoices = JSON.stringify($userChoices);
 
     // Gather all unique themes
     materiaali.forEach((item) => {
@@ -101,33 +120,53 @@
     });
     possibleThemes = Array.from(possibleThemes);
 
-
     while (setsGenerated <= totalSetsNeeded) {
       let possibleChoices = [];
-      const today = getCurrentDay();
-      const selectedTheme = possibleThemes[Math.floor(Math.random() * possibleThemes.length)];
+      const selectedTheme =
+        possibleThemes[Math.floor(Math.random() * possibleThemes.length)];
 
       // Filter choices based on the day and the selected theme
-      materiaali.forEach((item) => {
-        if ((item.day === "any" || item.day === today) && item.theme === selectedTheme) {
-          item.content.forEach((contentItem) => {
-            if (!$userChoices[today].includes(contentItem) && !usedContent.has(contentItem)) {
-              possibleChoices.push({ ...item, content: contentItem });
-            }
-          });
-        }
+      Object.keys($userChoices).forEach((day) => {
+        materiaali.forEach((item) => {
+          if (
+            (item.day === "any" || item.day === day) &&
+            item.theme === selectedTheme
+          ) {
+            item.content.forEach((contentItem) => {
+              if (
+                !frozenUserChoices.includes(contentItem) &&
+                !usedContent.has(contentItem)
+              ) {
+                possibleChoices.push({ ...item, content: contentItem });
+              }
+            });
+          }
+        });
       });
+
+      // Remove duplicates from possibleChoices
+      possibleChoices = possibleChoices.filter(
+        (v, i, a) => a.findIndex((t) => t.content === v.content) === i,
+      );
 
       if (possibleChoices.length >= choicesPerSet) {
         let setChoices = [];
-        for (let i = 0; i < choicesPerSet; i++) {
-          const randomIndex = Math.floor(Math.random() * possibleChoices.length);
-          setChoices.push(possibleChoices[randomIndex]);
-          usedContent.add(possibleChoices[randomIndex].content); // Add to used content
-          possibleChoices.splice(randomIndex, 1);
+        while (
+          setChoices.length < choicesPerSet &&
+          possibleChoices.length > 0
+        ) {
+          const randomIndex = Math.floor(
+            Math.random() * possibleChoices.length,
+          );
+          const choice = possibleChoices[randomIndex];
+          setChoices.push(choice);
+          usedContent.add(choice.content); // Add to used content
+          possibleChoices.splice(randomIndex, 1); // Remove from possible choices
         }
-        currentChoices = [...currentChoices, setChoices];
-        setsGenerated++;
+        if (setChoices.length === choicesPerSet) {
+          currentChoices = [...currentChoices, setChoices];
+          setsGenerated++;
+        }
       }
     }
 
@@ -138,20 +177,19 @@
     }
   }
   function getThemePrompt() {
-    if(currentChoices[stage]) {
+    if (currentChoices[stage]) {
       switch (currentChoices[stage][0].theme) {
         case "roska":
-          console.log('roska')
           themePrompt = "Huomaat roskan lattialla. Noukit sen ylös.";
           break;
         case "piirrustus":
-          themePrompt = "Siitä inspiroituneena piirrät kuvan.";
+          themePrompt = "Piirrät kuvan.";
           break;
         case "filmikuva":
-          themePrompt = "Tallennat hetken kamerallasi.";
+          themePrompt = "Tallennat hetken filmille.";
           break;
         case "runo":
-          themePrompt = "Mielesi kutoo sanoista kangasta.";
+          themePrompt = "Kudot sanoista kangasta.";
           break;
         case "esitys":
           themePrompt = "Saat idean esityksestä.";
@@ -160,7 +198,7 @@
           themePrompt = "Teet muistiinpanon käymästäsi keskustelusta.";
           break;
         case "lista":
-          themePrompt = "Teet listan, jottet unohtaisi.";
+          themePrompt = "Teet listan, ettet unohtaisi.";
           break;
         case "lause":
           themePrompt = "Rustaat ylös kuulemasi lauseen joka jäi mieleen.";
@@ -171,22 +209,23 @@
 
   function selectChoice(choice) {
     checkCooldown();
-    userChoices.update(choices => {
+    userChoices.update((choices) => {
       // Add the choice to the appropriate day
       choices[getCurrentDay()][stage] = choice.detail;
       return choices;
     });
     stage++;
     getThemePrompt();
+    checkCooldown();
   }
 
   function checkCooldown() {
-    if($userChoices[getCurrentDay()][5].content === undefined) {
+    if ($userChoices[getCurrentDay()][6].content === undefined) {
       isCooldownActive = false;
-      console.log('Cooldown is inactive');
+      console.log("Cooldown is inactive");
     } else {
       isCooldownActive = true;
-      console.log('Cooldown is active');
+      console.log("Cooldown is active");
     }
   }
 </script>
@@ -197,13 +236,20 @@
       <div class="prompt dontprint">
         <p>{@html filledPages}</p>
         <p>{@html daysWithLessThanSeven}</p>
-        <p>Kokonaisuudessaan zinestä on täytetty {Math.floor($storeTotalProgress / 49 * 100)}% <button on:click={() => window.print() }>Tulosta</button></p>
+        <p>
+          Kokonaisuudessaan zinestä on täytetty {Math.floor(
+            ($storeTotalProgress / 49) * 100,
+          )}% <button on:click={() => window.print()}>Tulosta</button>
+        </p>
       </div>
       <ZinePreview />
     {:else}
       <div class="prompt dontprint">
         <p>
-          On <Time timestamp={new Date()} format="dddd [ja kello näyttää] H:mm" />. {randomMoment}
+          On <Time
+            timestamp={new Date()}
+            format="dddd [ja kello näyttää] H:mm"
+          />. {randomMoment}
         </p>
         <p>
           {themePrompt}
@@ -211,14 +257,14 @@
       </div>
       <div class="choices">
         {#if currentChoices[stage]}
-          {#each currentChoices[stage] as choice, i }
+          {#each currentChoices[stage] as choice, i}
             <Choice {choice} index={i} on:select={selectChoice} />
           {/each}
         {/if}
       </div>
-    {/if} 
+    {/if}
   </div>
-  <div class="counter">
+  <div class="counter dontprint">
     <PagesCounter />
   </div>
 </Background>
@@ -226,29 +272,35 @@
 <style>
   .counter {
     position: absolute;
-    bottom:0;
-    width:100%;
+    bottom: 0;
+    width: 100%;
   }
   .game-content {
     height: 100%;
-    width:100%;
+    width: 100%;
     overflow: auto;
   }
   .prompt {
     font-size: 1.5rem;
     background-color: white;
-    border:1px solid black;
-    padding:0 1rem;
+    border: 1px solid black;
+    padding: 0 1rem;
     margin: 5vh auto;
-    width:max-content;
-    max-width:800px;
+    width: fit-content;
+    max-width: 800px;
   }
   .choices {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap:1rem;
+    gap: 1rem;
     max-width: 1024px;
     margin: 0 auto;
   }
-
+  @media screen and (max-width: 800px) {
+    .choices {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+      padding: 3rem;
+    }
+  }
 </style>

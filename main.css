@@ -239,7 +239,8 @@ article .text-container .text + .text{
 }
 @media (max-width: 1024px) {
   article .text-container {
-    margin: 2rem 0.5rem;
+    margin: 2rem 0;
+    padding:0.5rem;
   }
   article .text-container .text + .text{
     margin-top: 2rem;
@@ -254,7 +255,7 @@ article .text-container .text + .text{
 }
 .archive-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
   margin-bottom: 1rem;
   gap: 2rem;
   padding: 2rem;

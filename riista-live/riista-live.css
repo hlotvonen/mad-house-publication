@@ -38,6 +38,17 @@ body {
   padding: 1rem;
   height: 100%;
 }
+#audioPlayer {
+  display: flex;
+  flex-wrap: wrap;
+  gap:10px;
+  padding: 0.5rem 0;
+}
+
+
+#audioPlayer button {
+  width: 100px;
+}
 video {
   height: 100%;
   object-fit: cover;
@@ -46,7 +57,10 @@ video {
   border-radius: 200% 150% 120% 170%;
   cursor: zoom-in;
 }
-
+video.isovideo {
+  border-radius: 0;
+  object-fit: contain;
+}
 .video-container video.full-screen-video {
   position: fixed;
   top: 50%;

@@ -53,7 +53,7 @@
     <ZinePage {choice} />
   {/each}
   <div class="innerCover page"></div>
-  <div class="page backCover pattern-DGzqM"></div>
+  <div class="page backCover"></div>
 </div>
 
 <style>
@@ -64,9 +64,7 @@
   .titlepage {
     text-align: center;
     padding: 1em;
-    font-family: 'Reenie Beanie', serif;
     font-size: clamp(0.7rem, 3vw, 2rem);
-
   }
   .innerCover {
     /* Add styles for your choice container */
@@ -74,5 +72,7 @@
     background-color: #ffffff;
     border: 1px solid #ccc;
   }
-
+  .backCover {
+    background-color: #ffffff;
+  }
 </style>

@@ -118,8 +118,7 @@
     background-color: white;
     border-radius: 100%;
     border:1px solid #ccc;
-    padding:1rem 1rem;
-
+    padding:1rem;
   }
   .day {
     text-align: center;
@@ -129,6 +128,17 @@
     font-size: 1.5rem;
     font-family: monospace;
     width:4ch;
+  }
+  @media screen and (max-width: 800px) {
+    .pages-counter {
+      gap:0;
+    }
+    .day-container {
+      padding: 5px;
+    }
+    .counter {
+      font-size: 0.7rem;
+    }
   }
 
 </style>

@@ -1,10 +1,4 @@
-@font-face {
-  font-family: 'Reenie Beanie';
-  src: url('../ReenieBeanie.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
+
 img {
   max-width: 100%;
 }
@@ -36,9 +30,9 @@ img {
     border-radius: 2rem;
   }
   .choice-container p {
-    font-size: 2em;
-    font-family: 'Reenie Beanie', serif;
-    line-height: 10mm;
+    margin: 0;
+    font-size: clamp(0.7rem, 2.5vw, 1.5rem);
+    line-height: 1.4;
   }
   .page:nth-child(odd) {
     border-radius: 2rem 0 0 2rem;
@@ -47,7 +41,16 @@ img {
     border-radius: 0 2rem 2rem 0;
   }
 }
+@media screen and (max-width: 600px) {
+  .zine-preview {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .choice-container p {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+  }
 
+}
 @media print {
   * { 
     overflow: visible !important; 
@@ -59,20 +62,27 @@ img {
   }
   @page {
     size: A5;
-    padding: 20%;
   }
   .choice-container {
     page-break-after: always;
     break-after: page;
+    padding: 10mm;
   }
-  
-}
-
-@media print {
   .dontprint {
     display: none;
   }
   button {
     display: none;
+  }
+  .shape {
+    background:none !important;
+  }
+  .page {
+    max-width: initial !important;
+    border:none !important;
+  }
+  img {
+    object-fit:scale-down !important;
+    max-height: 150mm !important;
   }
 }

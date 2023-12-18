@@ -12,14 +12,10 @@
 </div>
 
 <style>
-  .choice-container p {
-    margin: 0;
-    font-size: 2rem;
-    line-height: 1;
-  }
   img {
     object-fit: contain;
     max-height: 100%;
     margin: 0 auto;
+    display: flex;
   }
 </style>

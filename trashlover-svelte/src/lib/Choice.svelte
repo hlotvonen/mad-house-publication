@@ -63,11 +63,6 @@
     padding: 1rem;
     overflow: initial;
   }
-  .choice-container p {
-    margin: 0;
-    font-size: 2rem;
-    line-height: 1;
-  }
   img {
     object-fit: contain;
     max-height: 100%;
@@ -78,5 +73,11 @@
     box-shadow: 0 0 10px 5px var(--color3); 
     transform: scale(1.05);
     z-index: 2;
+  }
+  @media screen and (max-width: 800px) {
+    .choice-container:focus, .choice-container:hover {
+      transform: scale(1);
+      z-index: 0;
+    }
   }
 </style>
