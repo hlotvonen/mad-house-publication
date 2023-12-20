@@ -1,5 +1,5 @@
 <script>
-  import {Howl} from 'howler';
+  import { Howl } from 'howler';
   import { onMount } from "svelte";
   import { circles, circleDistances, innerHeight, innerWidth } from "./store.js";
   import { spring } from 'svelte/motion';

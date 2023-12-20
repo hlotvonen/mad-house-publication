@@ -1,6 +1,7 @@
 <script>
   import Soundboard from "./lib/Soundboard.svelte";
   import Modal from "./lib/Modal.svelte";
+  import { Howler } from "howler";
 
   let showBioInfo = false;
   let showTariKuvailee = false;
@@ -31,7 +32,7 @@
     <button on:click={() => (showTheChoppingBlock = true)}>The Chopping Block</button>
     <button on:click={() => (showAxesAccess = true)}>Axes/Access</button>
     <button on:click={() => (showTheHedge = true)}>The Hedge</button>
-
+    <button on:click={() => Howler.stop()}>STOP ALL AUDIO</button>
   </div>
   <div class="freja-container bg-color">
     <Soundboard />
