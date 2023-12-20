@@ -36,6 +36,9 @@
   <div class="freja-container bg-color">
     <Soundboard />
   </div>
+  <div class="mobile-layout">
+    <p>Huom! Varsinainen teos on koettavissa leveällä ruudulla.</p>
+  </div>
 </div>
 
 {#if showBioInfo}
@@ -426,5 +429,17 @@
   }
   .centered {
     text-align: center;
+  }
+  .mobile-layout {
+    display: none;
+  }
+  @media only screen and (max-width: 768px) and (hover: none) and (pointer: coarse) {
+    .freja-container {
+      display: none;
+    }
+    .mobile-layout {
+      display: block;
+      padding: 1rem;
+    }
   }
 </style>

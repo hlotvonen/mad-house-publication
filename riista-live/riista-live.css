@@ -41,13 +41,16 @@ body {
 #audioPlayer {
   display: flex;
   flex-wrap: wrap;
-  gap:10px;
+  gap:5px;
   padding: 0.5rem 0;
+}
+#audioPlayer input {
+  width: auto;
 }
 
 
 #audioPlayer button {
-  width: 100px;
+  width: 75px;
 }
 video {
   height: 100%;

@@ -10,7 +10,7 @@ main,
 body {
 	font-size: 18px;
 }
-@media (max-width: 700px) {
+@media (max-width: 1440px) {
 	body {
 		font-size: 14px;
 	}
@@ -64,11 +64,11 @@ button {
   color: black;
 	font-family: sans-serif;
   border: 2px outset var(--color10); 
-  padding: 10px 20px;       /* Padding around the text */
+  padding: 5px 10px;       /* Padding around the text */
   text-align: center;       /* Center the text */
   text-decoration: none;    /* No underline */
   display: inline-block;    /* Allows setting width and height */
-  font-size: 16px;          /* Standard text size */
+  font-size: 0.9rem;          /* Standard text size */
   margin: 4px 2px;          /* Margin for spacing between buttons */
   cursor: pointer;          /* Cursor to pointer to indicate it's clickable */
   border-radius: 5px;       /* Rounded corners */
